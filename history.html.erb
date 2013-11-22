@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>利用履歴</title>
+  <style>
+    table, td, th {
+      border: 1px solid;
+    }
+    td, th {
+      padding: 5px;
+    }
+    td:nth-child(1) {
+      width: 120px;
+    }
+    td:nth-child(2) {
+      width: 180px;
+      text-align: right;
+    }
+  </style>
+</head>
+<body>
+  <h1>利用履歴</h1>
+  
+  <table>
+    <thead>
+      <tr>
+        <th>日時</th>
+        <th>ポイント</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% HISTORY.each do |row| %>
+      <tr>
+        <td><%= row[0] %></td>
+        <td><%= row[1] %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+  
+  <form method="POST" action="download_csv">
+    <p><input type="submit" value="ダウンロード" id="download"></p>
+  </form>
+</body>
+</html>

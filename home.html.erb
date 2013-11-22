@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>ホーム</title>
+</head>
+<body>
+  <h1>ホーム</h1>
+  <p>ようこそ！userさん</p>
+  <p>ただいまのご利用ポイントは <b><%= HISTORY.reduce(0){|m,v| m += v[1]} %></b> です</p>
+  <p><a href="history" id="to_history">利用履歴</a></p>
+</body>
+</html>
